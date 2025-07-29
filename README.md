@@ -1,7 +1,7 @@
 # Pham Hoang Anh (Pha)
-I'm studying Mechatronics and I do:
+I'm a Mechatronics major - AI researcher. I do:
+- Reinforcement learning and Generative algorithms
+- AI Agents (MCP)
 - Digital twin
-- RL and Gen AI
-- I also do some programming (embedded, app, game, ...)
 
-=> Didn't have any significantly projects yet, but I think NVIDIA should hire me
+=> Didn't have any significantly projects yet, but I think NVIDIA should sponsor me
