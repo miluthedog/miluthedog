@@ -6,4 +6,4 @@ I'm a Mechatronics major - AI researcher. I do:
 
 => Didn't have any significantly projects yet, but I think NVIDIA should sponsor me
 
-Anyway, check out the repos with descriptions (the ones without are mostly unstructured experiments)
+### Anyway, check out the repos with descriptions (the ones without are mostly unstructured experiments)
