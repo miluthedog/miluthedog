@@ -5,6 +5,6 @@ I'm a Mechatronics major - AI researcher. I do:
 - Digital twin
 
 => Didn't have any significantly projects yet, but I think YOU should sponsor me
-![Dynamic Images](img.svg?v=1)
+![Dynamic Images](img.svg)
 
 ### Anyway, check out the repos with descriptions (the ones without are mostly unstructured experiments)
