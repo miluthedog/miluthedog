@@ -1,5 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
-/* background of size 1920x1080 and 5 pictures of size 500x500 */
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080">
   <style>
     :root {
       --total-duration: 30s; 
@@ -14,20 +13,37 @@
       100% { transform: translateX(3000px); }
     }
 
+    /* Fixed intervals: 30 / 5 = 6s steps */
     .img1 { animation-delay: 0s; }
     .img2 { animation-delay: -6s; }
     .img3 { animation-delay: -12s; }
-    .img4 { animation-delay: -24s; }
-    .img5 { animation-delay: -30s; }
+    .img4 { animation-delay: -18s; }
+    .img5 { animation-delay: -24s; }
   </style>
 
-  <image href="images/background.png" width="1920" height="1080" />
+  <image width="1920" height="1080" 
+         href="https://raw.githubusercontent.com/miluthedog/miluthedog/main/images/background.png" 
+         xlink:href="https://raw.githubusercontent.com/miluthedog/miluthedog/main/images/background.png" />
 
   <g>
-    <image class="highlight-image img1" href="https://raw.githubusercontent.com/miluthedog/miluthedog/main/images/1.jpg" y="25%" width="500" height="500" />
-    <image class="highlight-image img2" href="https://raw.githubusercontent.com/miluthedog/miluthedog/main/images/2.jpg" y="25%" width="500" height="500" />
-    <image class="highlight-image img3" href="https://raw.githubusercontent.com/miluthedog/miluthedog/main/images/3.jpg" y="25%" width="500" height="500" />
-    <image class="highlight-image img4" href="https://raw.githubusercontent.com/miluthedog/miluthedog/main/images/4.jpg" y="25%" width="500" height="500" />
-    <image class="highlight-image img5" href="https://raw.githubusercontent.com/miluthedog/miluthedog/main/images/5.jpg" y="25%" width="500" height="500" />
+    <image class="highlight-image img1" y="25%" width="500" height="500" 
+           href="https://raw.githubusercontent.com/miluthedog/miluthedog/main/images/1.jpg" 
+           xlink:href="https://raw.githubusercontent.com/miluthedog/miluthedog/main/images/1.jpg" />
+           
+    <image class="highlight-image img2" y="25%" width="500" height="500" 
+           href="https://raw.githubusercontent.com/miluthedog/miluthedog/main/images/2.jpg" 
+           xlink:href="https://raw.githubusercontent.com/miluthedog/miluthedog/main/images/2.jpg" />
+           
+    <image class="highlight-image img3" y="25%" width="500" height="500" 
+           href="https://raw.githubusercontent.com/miluthedog/miluthedog/main/images/3.jpg" 
+           xlink:href="https://raw.githubusercontent.com/miluthedog/miluthedog/main/images/3.jpg" />
+           
+    <image class="highlight-image img4" y="25%" width="500" height="500" 
+           href="https://raw.githubusercontent.com/miluthedog/miluthedog/main/images/4.jpg" 
+           xlink:href="https://raw.githubusercontent.com/miluthedog/miluthedog/main/images/4.jpg" />
+           
+    <image class="highlight-image img5" y="25%" width="500" height="500" 
+           href="https://raw.githubusercontent.com/miluthedog/miluthedog/main/images/5.jpg" 
+           xlink:href="https://raw.githubusercontent.com/miluthedog/miluthedog/main/images/5.jpg" />
   </g>
 </svg>
