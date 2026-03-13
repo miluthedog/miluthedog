@@ -2,7 +2,7 @@ name: Update Animated SVG
 on:
   push:
     paths:
-      - 'svgImg/image.png'
+      - 'image.png'
 
 jobs:
   build:
