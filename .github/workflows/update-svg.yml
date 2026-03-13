@@ -11,14 +11,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Inject PNG into SVG
+      - name: Set up Python
         run: |
-          # 1. Convert PNG to Base64 string
-          IMG_B64=$(base64 -w 0 image.png)
+          python3 -c '
+          import base64, os
+
+          with open("image.png", "rb") as f:
+              b64_data = base64.b64encode(f.read()).decode("utf-8")
           
-          # 2. Replace the placeholder in the template
-          # We use a temp file to avoid sed reference issues
-          sed "s|IMAGE_DATA_HERE|data:image/png;base64,$IMG_B64|g" template.svg > animated.svg
+          data_uri = f"data:image/png;base64,{b64_data}"
+          
+          with open("template.svg", "r") as f:
+              content = f.read().replace("IMAGE_DATA_HERE", data_uri)
+              
+          with open("animated.svg", "w") as f:
+              f.write(content)
+          '
 
       - name: Commit and Push
         run: |
