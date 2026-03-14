@@ -14,46 +14,44 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Inject Images into SVG
         run: |
-          python3 -c '
-          import base64
-          import os
-
+          python3 -c "
+          import base64, os
+          
           def get_b64(path):
               if not os.path.exists(path):
-                  print(f"Warning: {path} not found.")
-                  return ""
-              
-              ext = os.path.splitext(path)[1].lower().replace('.', '')
-              mime = "jpeg" if ext in ["jpg", "jpeg"] else "png"
-              with open(path, "rb") as f:
-                  data = base64.b64encode(f.read()).decode("utf-8")
-              return f"data:image/{mime};base64,{data}"
+                  print(f'Warning: {path} not found.')
+                  return ''
+              ext = os.path.splitext(path)[1].lower()[1:]
+              mime = 'jpeg' if ext in ['jpg', 'jpeg'] else 'png'
+              with open(path, 'rb') as f:
+                  data = base64.b64encode(f.read()).decode('utf-8')
+              return f'data:image/{mime};base64,{data}'
 
-          folder = "svgImg"
+          folder = 'svgImg'
           files = {
-              "IMAGE_DATA_BG": "svgImg/assets/bg.jpg",
-              "IMAGE_DATA_1": "svgImg/assets/1.jpg",
-              "IMAGE_DATA_2": "svgImg/assets/2.jpg",
-              "IMAGE_DATA_3": "svgImg/assets/3.jpg",
-              "IMAGE_DATA_4": "svgImg/assets/4.jpg",
-              "IMAGE_DATA_5": "svgImg/assets/5.jpg"
+              'IMAGE_DATA_BG': 'bg.jpg',
+              'IMAGE_DATA_1': '1.jpg',
+              'IMAGE_DATA_2': '2.jpg',
+              'IMAGE_DATA_3': '3.jpg',
+              'IMAGE_DATA_4': '4.jpg',
+              'IMAGE_DATA_5': '5.jpg'
           }
-          template_path = os.path.join(folder, "svgImg/template.svg")
-          output_path = os.path.join(folder, "svgImg/animated.svg")
+
+          template_path = os.path.join(folder, 'template.svg')
+          output_path = os.path.join(folder, 'animated.svg')
 
           if os.path.exists(template_path):
-              with open(template_path, "r") as f:
+              with open(template_path, 'r') as f:
                   content = f.read()
-
               for placeholder, filename in files.items():
-                  full_path = os.path.join(folder, filename)
-                  content = content.replace(placeholder, get_b64(full_path))
-
-              with open(output_path, "w") as f:
+                  content = content.replace(placeholder, get_b64(os.path.join(folder, filename)))
+              with open(output_path, 'w') as f:
                   f.write(content)
-          '
+          else:
+              print('Error: template.svg not found')
+          "
 
       - name: Commit and Push
         run: |
