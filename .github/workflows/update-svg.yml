@@ -29,7 +29,7 @@ jobs:
                   data = base64.b64encode(f.read()).decode('utf-8')
               return f'data:image/{mime};base64,{data}'
 
-          folder = 'svgImg'
+          folder = 'svgImg/assets'
           files = {
               'IMAGE_DATA_BG': 'bg.jpg',
               'IMAGE_DATA_1': '1.jpg',
