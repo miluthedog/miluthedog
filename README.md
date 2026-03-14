@@ -8,6 +8,6 @@ I'm a Mechatronics major - AI researcher. I do:
 
 ![Dynamic Images](img.svg)
 
-![test](animated.svg)
+![test](svgImg\animated.svg)
 
 ### Anyway, check out the repos with descriptions (the ones without are mostly unstructured experiments)

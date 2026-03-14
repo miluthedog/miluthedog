@@ -1,7 +1,0 @@
-<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
-  <image id="target" href="IMAGE_DATA_HERE" width="400" height="400" />
-  
-  <circle cx="0" cy="0" r="10" fill="blue">
-    <animateMotion path="M10,10 L390,390" dur="5s" repeatCount="indefinite" />
-  </circle>
-</svg>

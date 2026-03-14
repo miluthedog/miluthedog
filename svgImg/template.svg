@@ -1,0 +1,22 @@
+<svg xmlns = "http://www.w3.org/2000/svg" viewBox = "0 0 1920 1080">
+  <image width="1920" height="1080" href="IMAGE_DATA_BG" />
+  
+  <g>
+    <image y="25%" width="500" height="500" href="IMAGE_DATA_1" />
+      <animateTransform attributeName="transform" type="translate" from="-2500 0" to="2500 0" dur="30s" repeatCount="indefinite" begin="0s"/>
+    </image>
+    <image y="25%" width="500" height="500" href="IMAGE_DATA_2" />
+      <animateTransform attributeName="transform" type="translate" from="-2500 0" to="2500 0" dur="30s" repeatCount="indefinite" begin="-6s"/>
+    </image>
+    <image y="25%" width="500" height="500" href="IMAGE_DATA_3" />
+      <animateTransform attributeName="transform" type="translate" from="-2500 0" to="2500 0" dur="30s" repeatCount="indefinite" begin="-12s"/>
+    </image>
+    <image y="25%" width="500" height="500" href="IMAGE_DATA_4" />
+      <animateTransform attributeName="transform" type="translate" from="-2500 0" to="2500 0" dur="30s" repeatCount="indefinite" begin="-18s"/> 
+    </image>
+    <image y="25%" width="500" height="500" href="IMAGE_DATA_5" />
+      <animateTransform attributeName="transform" type="translate" from="-2500 0" to="2500 0" dur="30s" repeatCount="indefinite" begin="-24s"/>
+    </image>
+  </g>
+
+</svg>

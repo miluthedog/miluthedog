@@ -2,7 +2,10 @@ name: Update Animated SVG
 on:
   push:
     paths:
-      - 'image.png'
+      - 'svgImg/assets/*.jpg'
+      - 'svgImg/assets/*.jpeg'
+      - 'svgImg/assets/*.png'
+      - 'svgImg/template.svg'
 
 jobs:
   build:
@@ -14,18 +17,42 @@ jobs:
       - name: Set up Python
         run: |
           python3 -c '
-          import base64, os
+          import base64
+          import os
 
-          with open("image.png", "rb") as f:
-              b64_data = base64.b64encode(f.read()).decode("utf-8")
-          
-          data_uri = f"data:image/png;base64,{b64_data}"
-          
-          with open("template.svg", "r") as f:
-              content = f.read().replace("IMAGE_DATA_HERE", data_uri)
+          def get_b64(path):
+              if not os.path.exists(path):
+                  print(f"Warning: {path} not found.")
+                  return ""
               
-          with open("animated.svg", "w") as f:
-              f.write(content)
+              ext = os.path.splitext(path)[1].lower().replace('.', '')
+              mime = "jpeg" if ext in ["jpg", "jpeg"] else "png"
+              with open(path, "rb") as f:
+                  data = base64.b64encode(f.read()).decode("utf-8")
+              return f"data:image/{mime};base64,{data}"
+
+          folder = "svgImg"
+          files = {
+              "IMAGE_DATA_BG": "svgImg/assets/bg.jpg",
+              "IMAGE_DATA_1": "svgImg/assets/1.jpg",
+              "IMAGE_DATA_2": "svgImg/assets/2.jpg",
+              "IMAGE_DATA_3": "svgImg/assets/3.jpg",
+              "IMAGE_DATA_4": "svgImg/assets/4.jpg",
+              "IMAGE_DATA_5": "svgImg/assets/5.jpg"
+          }
+          template_path = os.path.join(folder, "svgImg/template.svg")
+          output_path = os.path.join(folder, "svgImg/animated.svg")
+
+          if os.path.exists(template_path):
+              with open(template_path, "r") as f:
+                  content = f.read()
+
+              for placeholder, filename in files.items():
+                  full_path = os.path.join(folder, filename)
+                  content = content.replace(placeholder, get_b64(full_path))
+
+              with open(output_path, "w") as f:
+                  f.write(content)
           '
 
       - name: Commit and Push
