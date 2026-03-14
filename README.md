@@ -6,8 +6,6 @@ I'm a Mechatronics major - AI researcher. I do:
 
 => Didn't have any significantly projects yet, but I think YOU should sponsor me
 
-![Dynamic Images](img.svg)
-
-![test](svgImg/animated.svg)
+![SVG Animated Images](svgImg/animated.svg)
 
 ### Anyway, check out the repos with descriptions (the ones without are mostly unstructured experiments)
