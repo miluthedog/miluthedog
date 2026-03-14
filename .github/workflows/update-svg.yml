@@ -57,6 +57,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add animated.svg
+          git add svgImg/animated.svg
           git commit -m "Auto-update animated.svg with new PNG" || exit 0
           git push
