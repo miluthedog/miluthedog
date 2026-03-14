@@ -29,14 +29,14 @@ jobs:
                   data = base64.b64encode(f.read()).decode('utf-8')
               return f'data:image/{mime};base64,{data}'
 
-          folder = 'svgImg/assets'
+          folder = 'svgImg'
           files = {
-              'IMAGE_DATA_BG': 'bg.jpg',
-              'IMAGE_DATA_1': '1.jpg',
-              'IMAGE_DATA_2': '2.jpg',
-              'IMAGE_DATA_3': '3.jpg',
-              'IMAGE_DATA_4': '4.jpg',
-              'IMAGE_DATA_5': '5.jpg'
+              'IMAGE_DATA_BG': 'assets/bg.jpg',
+              'IMAGE_DATA_1': 'assets/1.jpg',
+              'IMAGE_DATA_2': 'assets/2.jpg',
+              'IMAGE_DATA_3': 'assets/3.jpg',
+              'IMAGE_DATA_4': 'assets/4.jpg',
+              'IMAGE_DATA_5': 'assets/5.jpg'
           }
 
           template_path = os.path.join(folder, 'template.svg')
